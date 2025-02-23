@@ -25,7 +25,7 @@ from sklearn.model_selection import train_test_split
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # Dataset path
-DATASET_DIR = r"C:\Users\SAKSHI\Desktop\Tech Saksham - Python\Day-4\dataset"
+DATASET_DIR = r"dataset"
 
 # Function to preprocess images
 def preprocess_image(image_path):
