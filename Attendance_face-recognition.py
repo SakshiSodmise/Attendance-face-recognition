@@ -22,10 +22,11 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from sklearn.model_selection import train_test_split
 
 # Load Haar Cascade face detector
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(r"C:\Users\SAKSHI\Desktop\Tech Saksham - Python\Day-4\Face-recognition-system\haarcascade_frontalface_default.xml")
+
 
 # Dataset path
-DATASET_DIR = r"dataset"
+DATASET_DIR = r"C:\Users\SAKSHI\Desktop\Tech Saksham - Python\Day-4\Face-recognition-system\dataset"
 
 # Function to preprocess images
 def preprocess_image(image_path):
@@ -148,6 +149,10 @@ for idx, person in enumerate(os.listdir(DATASET_DIR)):
 
 images = np.array(images)
 labels = np.array(labels)
+
+# Debugging: Check if X and y are empty before splitting
+print("X shape:", len(X))
+print("y shape:", len(y))
 
 # Split data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(images, labels, test_size=0.2, random_state=42)
